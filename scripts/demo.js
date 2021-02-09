@@ -12,7 +12,7 @@ const {concat, of, throwError} = require('rxjs');
 const {map, scan, share,tap} = require('rxjs/operators');
 
 const {fromFile,writeFile} = require('@bottlenose/rxfs');
-const {toDeepgram} = require('../dist/index.js');
+const {toDeepSpeech} = require('../dist/index.js');
 
 const trace = label => tap(data => console.log(label, data));
 
@@ -85,6 +85,7 @@ program
   .command('run')
   .description('Runs transcription demo. Example: run --model-dir ./deepspeech-models-0.7.0')
   .option('--model-dir', 'Path to the DeepSpeech model folder', defaults.modelDir)
+  .option('--input-file-path', 'path to an input file', defaults.inputFilePath)
   .option('--write-output', 'write output to a file at the given path', defaults.outputPath)
   .option('--output-path', 'Path of where to write output', outputPath)
   .action(options => runDemo({...options}))
