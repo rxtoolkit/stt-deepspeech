@@ -1,11 +1,8 @@
-# @buccaneerai/toDeepSpeech
+# @rxtk/toDeepSpeech
 > 👂 An RxJS operator for real-time speech-to-text (STT/S2T) streaming using the opensource DeepSpeech library.
 
-## Installation
-This is a private package. It requires setting up access in your npm config.
-
 ```bash
-yarn add @buccaneerai/stt-deepspeech
+yarn add @rxtk/stt-deepspeech
 ```
 
 ⚠️ To run the DeepSpeech pipeline, you must [download the corresponding DeepSpeech model](https://github.com/mozilla/DeepSpeech/releases), unzip it and pass the model directory to the `toDeepSpeech` operator like this: `toDeepSpeech({modelDir: 'path/to/deepseech-models-0.7.0'})`.
@@ -18,7 +15,7 @@ yarn add @buccaneerai/stt-deepspeech
 Stream audio speech data to DeepSpeech and get transcripts back:
 ```js
 import {map} from 'rxjs/operators';
-import {toDeepSpeech} from '@buccaneerai/stt-deepspeech';
+import {toDeepSpeech} from '@rxtk/stt-deepspeech';
 
 // The pipeline takes a stream of audio chunks encoded as LINEAR16 (PCM encoded as 16-bit integers) (Buffer, String, Blob or Typed Array)
 const buffer$ = pcmChunkEncodedAs16BitIntegers$.pipe(
